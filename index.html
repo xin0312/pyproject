@@ -12,7 +12,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
-from js import document
+from pyscript import display  # PyScript 特有，用于显示图像在网页
 
 # 创建画布
 fig, ax = plt.subplots()
@@ -21,12 +21,12 @@ ax.set_ylim(-150, 150)
 
 points, = ax.plot([], [], 'o', color='red')
 
-# 初始化
+# 初始化函数
 def init():
     points.set_data([], [])
     return points,
 
-# 动画函数
+# 每一帧动画更新函数
 def animate(i):
     r = np.random.rand(20) * 100
     theta = np.random.rand(20) * 2 * np.pi
@@ -35,8 +35,11 @@ def animate(i):
     points.set_data(x, y)
     return points,
 
+# 创建动画
 ani = FuncAnimation(fig, animate, init_func=init, frames=50, interval=100)
-plt.show()
+
+# 显示图像在网页上（关键点）
+display(fig)
     </py-script>
 </body>
 </html>
