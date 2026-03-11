@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python 烟花动画</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <h1>🎆 烟花效果 🎆</h1>
+    <py-script>
+        import turtle
+
+        t = turtle.Turtle()
+        t.speed(0)
+
+        for i in range(36):
+            t.forward(100)
+            t.backward(100)
+            t.right(10)
+
+        turtle.done()
+    </py-script>
+</body>
+</html>
